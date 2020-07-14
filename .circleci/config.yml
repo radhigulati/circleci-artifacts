@@ -36,7 +36,6 @@ jobs:
             npm run build
             percy snapshot public
   downstream:
-    <<:
     steps:
       - attach_workspace:
           at: /tmp/workspace
