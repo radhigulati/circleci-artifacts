@@ -18,12 +18,13 @@ jobs:
 
     steps:
       - checkout
-      - run: mkdir -p workspace
-      - run: echo "Hi" > workspace/echo-output
-      - persist_to_workspace:
-        root: workspace
-        paths:
-          - echo-output
+      - run: echo "Hi"
+      # - run: mkdir -p workspace
+      # - run: echo "Hi" > workspace/echo-output
+      # - persist_to_workspace:
+      #   root: workspace
+      #   paths:
+      #     - echo-output
       - run:
           name: install dependencies
           command: |
@@ -35,7 +36,7 @@ jobs:
           command: |
             npm run build
             percy snapshot public
-  downstream:
-    steps:
-      - attach_workspace:
-          at: /tmp/workspace
+  # downstream:
+  #   steps:
+  #     - attach_workspace:
+  #         at: /tmp/workspace
