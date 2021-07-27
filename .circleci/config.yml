@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout
       - run: mkdir -p workspace
-      - run: echo "Hello World" > workspace/echo-output
+      - run: echo "Hi" > workspace/echo-output
       - persist_to_workspace:
         root: workspace
         paths:
